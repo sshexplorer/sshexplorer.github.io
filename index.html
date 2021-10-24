@@ -1,0 +1,29 @@
+<title>SSH Explorer SSH Client</title>
+SSH Explorer is a SSH Client that is no longer maintained and updated. Customers who need the latest full version can download it from here:
+<a href='https://sshexplorer.github.io/SSHExplorerFullSetup.exe'>https://sshexplorer.github.io/SSHExplorerFullSetup.exe</a> <br>
+
+<h3>Solutions to couple common problems:</h3>
+
+<b>Q: I can't connect to the server, even though [some other SSH client] has no problems</b>
+<p><b>A:</b>
+Latest Linux versions are disabling a key exchange method that SSH Explorer needs. Unfortunately, I'm not working on SSH Explorer any more and there won't be an upgrade to fix this problem. <br>
+A possible workaround for you is to add the following in your sshd_config file and then restart the ssh service:<br>
+KexAlgorithms +diffie-hellman-group1-sha1 <br><br>
+
+Note that this is not recommended because of security issues with that key exchange method. It's explained here:
+<a href="https://www.openssh.com/legacy.html">https://www.openssh.com/legacy.html</a> <br><br>
+
+I'd suggest you weigh the pros and cons before making a decision whether you'd want to do something like that.
+</p>
+
+<br><br>
+
+<b>Q: Where are settings/snippets/connections stored and how do I backup/restore them</b>
+<p><b>A:</b>
+
+
+In Windows XP the files are located in in C:\Program Files\SSH Explorer and in Vista/7/8/10 in C:\Users\<your_username>\AppData\Local\VirtualStore\Program Files\SSH Explorer. Files are named settings.ini, connections.ini and snippets.ini <br>
+There have been reported cases where the files somehow get deleted/overwritten without the user doing anything to cause that. In those cases I usually recommend installing SSH Explorer in a folder outside Program Files. For example C:\SSH Explorer. That way all relevant files are kept in SSH Explorer's main folder and Windows doesn't move them elsewhere.
+</p>
+
+
